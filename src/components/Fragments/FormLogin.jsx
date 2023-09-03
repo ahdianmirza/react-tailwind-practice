@@ -10,6 +10,7 @@ const FormLogin = () => {
             placeholder="example@gmail.com"
             name="email"
             autocomplete="off"
+            autofocus="on"
             />
             <InputForm
             label="Password"

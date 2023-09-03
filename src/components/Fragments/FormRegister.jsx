@@ -10,6 +10,7 @@ const FormRegister = () => {
             placeholder="Insert your name here"
             name="fullname"
             autocomplete="off"
+            autofocus="on"
         />
         <InputForm
             label="Email"
