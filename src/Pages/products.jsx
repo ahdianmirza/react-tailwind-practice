@@ -1,29 +1,45 @@
 import CardProduct from "../components/Fragments/CardProduct";
 
+const products = [
+  {
+    id: 1,
+    name: "Sepatu Baru",
+    price: "Rp 1.000.000",
+    image: "https://source.unsplash.com/1200x800?shoes",
+    description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
+            dolorem consequuntur molestias iusto at exercitationem fuga aperiam
+            maiores laborum soluta eligendi non illo minus, eos odit id
+            deserunt, aut a!`,
+  },
+  {
+    id: 2,
+    name: "Sepatu Lama",
+    price: "Rp 1.570.000",
+    image: "https://source.unsplash.com/1200x800?shoes",
+    description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit.`,
+  },
+  {
+    id: 3,
+    name: "Sepatu Adidas",
+    price: "Rp 2.000.000",
+    image: "https://source.unsplash.com/1200x800?shoes",
+    description: `Ini adalah sepatu baru dari brand Adidas.`,
+  },
+];
+
 const ProductsPage = () => {
     return (
-      <div className="flex justify-center items-center py-5">
-        <CardProduct>
-          <CardProduct.Header image="https://source.unsplash.com/1200x800?shoes" />
-          <CardProduct.Body title="Sepatu Baru">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-            dolorem consequuntur molestias iusto at exercitationem fuga aperiam
-            maiores laborum soluta eligendi non illo minus, eos odit id
-            deserunt, aut a!
-          </CardProduct.Body>
-          <CardProduct.Footer price="Rp 1.000.000" />
-        </CardProduct>
-        <CardProduct>
-          <CardProduct.Header image="https://source.unsplash.com/1200x800?shoes" />
-          <CardProduct.Body title="Sepatu Baru">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-            dolorem consequuntur molestias iusto at exercitationem fuga aperiam
-            maiores laborum soluta eligendi non illo minus, eos odit id
-            deserunt, aut a!
-          </CardProduct.Body>
-          <CardProduct.Footer price="Rp 1.000.000" />
-        </CardProduct>
-      </div>
+        <div className="flex justify-center py-5">
+            {products.map((product) => (
+                <CardProduct>
+                    <CardProduct.Header image={product.image} />
+                    <CardProduct.Body name={product.name}>
+                        {product.description}
+                    </CardProduct.Body>
+                    <CardProduct.Footer price={product.price} />
+                </CardProduct>
+            ))}
+        </div>
     );
 }
 
